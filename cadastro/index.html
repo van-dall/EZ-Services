@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"/> 
+    <script type="text/javascript" src="script.js"></script>   
+    <title>Cadastro</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">Logo</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Cadastro</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <form id="form" class="form" method="post" action="cadastro.php">
+          <h1>Faça seu cadastro</h1>
+          <div>
+            <p id="nome">Nome: </p><input type="text" placeholder="Digite seu nome" class="inputs required" oninput="nameValidate()"></p>
+            <span class="span-required">Nome deve ter no mínimo 3 caracteres</span> 
+        </div>
+        <div>
+            <p id="emailP">Email: <input id='email0' type="email" placeholder="Digite seu email" class="inputs required" oninput="emailValidate()"></p>
+            <span class="span-required">Digite um email válido</span> 
+        </div>
+        <div>
+            <p id="senhaP">Senha: <input type="password" placeholder="Senha" class="inputs required" oninput="mainPasswordValidate()"></p>
+            <span class="span-required">Digite uma senha com no mínimo 8 caracteres</span>
+        </div>
+        <div>
+            <p id="senha_checkP">Confirme sua senha: <input type="password" placeholder="Repita a sua senha" class="inputs required" oninput="comparePassword()"></p>
+            <span class="span-required">Senhas devem ser compatíveis</span>
+        </div>
+    
+            <input type="submit" id="submit" value="Realizar cadastro" class="confirm" name="enviar">
+        </form>
+        <img src="https://i.pinimg.com/originals/72/b8/37/72b837fd1445b2262993752accac89f3.png" alt="">
+    </div>
+    <script>
+        const form   = document.getElementById('form');
+        const campos = document.querySelectorAll('.required');
+        const spans  = document.querySelectorAll('.span-required');
+        const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+    
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            nameValidate();
+            emailValidate();
+            mainPasswordValidate();
+            comparePassword();
+        });
+    
+        function setError(index){
+            campos[index].style.border = '2px solid #e63636';
+            campos[index].style.boxShadow = '0px 5px 20px -6px #720909';
+            spans[index].style.display = 'block';
+        }
+    
+        function removeError(index){
+            campos[index].style.border = '';
+            campos[index].style.boxShadow = '';
+    
+            spans[index].style.display = 'none';
+        }
+    
+        function nameValidate(){
+            if(campos[0].value.length < 3)
+            {
+                setError(0);
+            }
+            else
+            {
+                removeError(0);
+            }
+        }
+    
+        function emailValidate(){
+            if(!emailRegex.test(campos[1].value))
+            {
+                setError(1);
+            }
+            else
+            {
+                removeError(1);
+            }
+        }
+    
+        function mainPasswordValidate(){
+            if(campos[2].value.length < 8)
+            {
+                setError(2);
+            }
+            else
+            {
+                removeError(2);
+                comparePassword();
+            }
+        }
+    
+        function comparePassword(){
+            if(campos[2].value == campos[3].value && campos[3].value.length >= 8)
+            {
+                removeError(3);
+            }
+            else
+            {
+                setError(3);
+            }
+        }
+    
+    </script>
+
+    
+</body>
+</html>

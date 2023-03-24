@@ -90,6 +90,9 @@ input::placeholder{
 
   img{
     animation:bounce 6s linear infinite;
+    height: 70vh;
+    width: 25vh;
+    margin-left: 30vh;
 
   }
 
@@ -162,4 +165,12 @@ nav .logo {
     font-size: 24px;
     font-weight: bold;
     margin-right: auto;
+}
+
+.endereco {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  margin-bottom: 20px;
+
 }

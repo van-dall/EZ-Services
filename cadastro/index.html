@@ -12,8 +12,8 @@
     <nav>
         <div class="logo">Logo</div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Login</a></li>
+            <li><a href="../tela_inicio/projeto_1.html">Home</a></li>
+            <li><a href="../login/indexLogin.html">Login</a></li>
             <li><a href="#">Cadastro</a></li>
         </ul>
     </nav>
@@ -154,8 +154,13 @@
             {
                 removeError(7);
             }
+
+        form.addEventListener('submit', (event) => {
+        event.preventDefault(); 
+        window.location.href = '../login prestador/indexLogin.html';
+});
         }
-        /* . */
+        
     
     </script>
 

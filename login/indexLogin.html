@@ -11,26 +11,31 @@
     <nav>
         <div class="logo">Logo</div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Cadastro</a></li>
+            <li><a href="../tela_inicio/projeto_1.html">Home</a></li>
+            <li><a href="./indexLogin.html">Login</a></li>
+            <li><a href="../cadastro/index.html">Cadastro</a></li>
         </ul>
     </nav>
-<div class="container"></div>
+<div id="form" class="container"></div>
     <form class="form">
         <h1>Faça seu login</h1>
    <p id="email">Email: <input type="email" placeholder="Digite seu Email"
     name="email_login" required> </p>   
     <p id="senha">Senha: <input type="password" placeholder="Digite sua Senha"
         name="senha_login" required> </p> 
-    <input type="submit" class="login" value="Login">
+    <input type="submit" class="login" value="Login" onclick="">
+</form>
         <div class="link">
             <p>Não possui uma conta? <a href="index.html" class="link0">Cadastre-se aqui!</a></p> 
         </div> 
         
     </form>
 </div>
-
+<script>
+form.addEventListener('submit', (event) => {
+    event.preventDefault(); 
+    window.location.href = '../tela_inicio/projeto_1.html';
+});
+</script>
 </body>
 </html>
-

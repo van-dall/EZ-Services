@@ -12,13 +12,13 @@
     <nav>
         <div class="logo">Logo</div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Cadastro</a></li>
+            <li><a href="../tela_inicio/projeto_1.html">Home</a></li>
+            <li><a href="../login prestador/indexLoginP.html">Login</a></li>
+            <li><a href="../cadastro prestador/indexP.html">Cadastro</a></li>
         </ul>
     </nav>
     <div class="container">
-        <form id="form" class="form" method="post" action="cadastro.php">
+        <form id="form" class="form" method="post" action="../login prestador/indexLoginP.html">
           <h1>Faça seu cadastro</h1>
           <div>
             <p id="nome">Nome: </p><input type="text" placeholder="Digite seu nome" class="inputs required" oninput="nameValidate()"></p>
@@ -55,8 +55,8 @@
             <option value="pintor">Pintor</option>
           </optgroup>
         </div>
-            <input type="submit" id="submit" value="Realizar cadastro" class="confirm" name="enviar">
-            
+        <input type="submit" id="submit" value="Realizar cadastro" class="confirm" name="enviar">
+
         </form>
     </div>
     <img src="https://i.pinimg.com/originals/72/b8/37/72b837fd1445b2262993752accac89f3.png" alt="">
@@ -152,8 +152,17 @@
             {
                 removeError(5);
             }
-        }
+            const form = document.querySelector('form');
+    form.addEventListener('submit', (event) => {
+    event.preventDefault(); 
+    window.location.href = '../login prestador/indexLoginP.html';
+});
+            
+            
     
+        }
+       
+     
     </script>
 
     

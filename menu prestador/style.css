@@ -14,7 +14,7 @@ body {
 
 .table {
     height: 100%;
-    width: 250vh;
+    width: 200vh;
   
     flex-direction: column;
     display: flex;

@@ -1,0 +1,36 @@
+.container {
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: #ffffff;
+    box-shadow: 0px 10px 40px #00000056;
+    border-left: 10px solid #ffae00;
+    border-right: 10px solid #ffae00;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+  }
+  
+  .list-group {
+    margin-top: 30px;
+  }
+  
+  .list-group-item {
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+  }
+  
+  .list-group-item:hover, .list-group-item:focus {
+    background-color: #e9ecef;
+  }
+  
+  .list-group-item a {
+    text-decoration: none;
+    color: #343a40;
+  }
+  

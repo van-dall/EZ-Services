@@ -83,7 +83,7 @@ input::placeholder {
   justify-content: center;
 }
 
-img {
+.img_trabalhador {
   animation: bounce 6s linear infinite;
   height: 70vh;
   width: 25vh;
@@ -154,8 +154,8 @@ nav a:hover {
 }
 
 nav .logo {
-  font-size: 24px;
-  font-weight: bold;
+  width: 80px;
+  height: 80px;
   margin-right: auto;
 }
 

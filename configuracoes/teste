@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<h1>informações do usuario</h1>
+
+	<table>
+		<thead>
+			<tr>
+                <th>ID_Cliente</th>
+				<th>Nome_Cliente</th>
+				<th>Email_Cliente</th>
+				<th>CPF_Cliente</th>
+				<th>Celular_Cliente</th>
+				<th>CEP_Cliente</th>
+				<th>Senha_Cliente</th>
+				<th>Endereco_Cliente</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+				    $servername = "localhost:3306";
+                    $username = "root";
+                    $password = "";
+                    $database = "EZservice";
+
+                    $conn = mysqli_connect($servername, $username, $password, $database);
+
+                    if (!$conn) {
+                    die("Conexão falhou: " . mysqli_connect_error());
+                    }
+                session_start();
+
+				$email_cliente = $_SESSION['Email_Cliente'];
+	
+
+				$sql = "SELECT * FROM Cliente WHERE Email_Cliente = $email_cliente";
+				$resultado = mysqli_query($conn, $sql);
+
+				if (mysqli_num_rows($resultado) > 0 ) {
+					$linha = mysqli_fetch_assoc($resultado);
+
+					echo "<tr>";
+                    echo "<td>" . $linha['ID_Cliente'] . "</td>";
+					echo "<td>" . $linha['Nome_Cliente'] . "</td>";
+					echo "<td>" . $linha['Email_Cliente'] . "</td>";
+					echo "<td>" . $linha['CPF_Cliente'] . "</td>";
+					echo "<td>" . $linha['Celular_Cliente'] . "</td>";
+					echo "<td>" . $linha['CEP_Cliente'] . "</td>";
+					echo "<td>" . $linha['Senha_Cliente'] . "</td>";
+					echo "<td>" . $linha['Endereco_Cliente'] . "</td>";
+					echo "</tr>";
+                }

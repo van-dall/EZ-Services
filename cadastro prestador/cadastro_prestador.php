@@ -46,30 +46,30 @@
         </ul>
       </div>
     <div class="container">
-        <form id="form" class="form" method="post" action="../login prestador/indexLoginP.html">
+        <form id="form" class="form" method="post" action="./tela_cadastro_prestador.php">
           <h1>Faça seu cadastro</h1>
           <div>
-            <p id="nome">Nome: </p><input type="text" placeholder="Digite seu nome" class="inputs required" oninput="nameValidate()"></p>
+            <p id="nome" name = "Nome_Prestador">Nome: </p><input type="text" placeholder="Digite seu nome" class="inputs required" oninput="nameValidate()"></p>
             <span class="span-required">Nome deve ter no mínimo 3 caracteres</span> 
         </div>
         <div>
-            <p id="emailP">Email: <input id='email0' type="email" placeholder="Digite seu email" class="inputs required" oninput="emailValidate()"></p>
+        <p id="emailP" name ="Email_Prestador">Email: <input id='email0' type="email" placeholder="Digite seu email" class="inputs required" oninput="emailValidate()"></p>
             <span class="span-required">Digite um email válido</span> 
         </div>
         <div>
-            <p id="senhaP">Senha: <input type="password" placeholder="Senha" class="inputs required" oninput="mainPasswordValidate()"></p>
+            <p id="senhaP" name = "Senha_Prestador">Senha: <input type="password" placeholder="Senha" class="inputs required" oninput="mainPasswordValidate()"></p>
             <span class="span-required">Digite uma senha com no mínimo 8 caracteres</span>
         </div>
         <div>
-            <p id="senha_checkP">Confirme sua senha: <input type="password" placeholder="Repita a sua senha" class="inputs required" oninput="comparePassword()"></p>
+            <p id="senha_checkP" name = "Senha_Prestador">Confirme sua senha: <input type="password" placeholder="Repita a sua senha" class="inputs required" oninput="comparePassword()"></p>
             <span class="span-required">Senhas devem ser compatíveis</span>
         </div>
         <div>
-            <p id="pcpf">Insira seu cpf: <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" class="inputs required" placeholder="Cpf com pontos e traços" oninput="cpfValidate()"></p>
+            <p id="pcpf" name = "CPF_Prestador">Insira seu cpf: <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" class="inputs required" placeholder="Cpf com pontos e traços" oninput="cpfValidate()"></p>
             <span class="span-required">Digite um cpf válido</span>
         </div>
         <div>
-            <p id="Ptelefone">Insira seu celular: <input type="text" id="telefone" name="telefone" class="inputs required" placeholder="(**)*****-****" pattern="[0-9]{2}[0-9]{9}" oninput="celValidate()"></p>
+            <p id="Ptelefone" name = "Celular_Prestador">Insira seu celular: <input type="text" id="telefone" name="telefone" class="inputs required" placeholder="(**)*****-****" pattern="[0-9]{2}[0-9]{9}" oninput="celValidate()"></p>
             <span class="span-required">Digite um número válido</span>
         </div>
         <div>
@@ -79,8 +79,7 @@
             <option value="eletricista">Eletricista</option>
             <option value="encanador">Encanador</option>
             <option value="gás">Serviços de gás</option>
-            <option value="pedreiro">Pedreiro</option>
-            <option value="pintor">Pintor</option>
+            <option value="jardineiro">Jardineiro</option>
           </optgroup>
         </div>
         <input type="submit" id="submit" value="Realizar cadastro" class="confirm" name="enviar">

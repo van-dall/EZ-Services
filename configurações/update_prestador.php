@@ -11,12 +11,12 @@ if (!$conn) {
     die("Conexão falhou: " . mysqli_connect_error());
 }
 
-$id = $_POST['ID_cliente'];
-$celular = $_POST['Celular_Cliente'];
-$endereco = $_POST['Endereco_Cliente'];
-$cep = $_POST['CEP_Cliente'];
+$id = $_POST['ID_Prestador'];
+$celular = $_POST['Celular_Prestador'];
+$endereco = $_POST['Endereco_Prestador'];
+$cep = $_POST['CEP_Prestador'];
 
-$sql = "UPDATE Cliente SET Celular_Cliente='$cliente', Endereco_Cliente='$endereco', CEP_Cliente='$cep'  WHERE id=$id";
+$sql = "UPDATE Prestador SET Celular_Prestador='$cliente', Endereco_Prestador='$endereco', CEP_Prestador='$cep'  WHERE id=$id";
 
 $result = mysqli_query($conn, $sql);
 

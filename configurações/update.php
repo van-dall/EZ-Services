@@ -11,7 +11,7 @@ if (!$conn) {
     die("Conexão falhou: " . mysqli_connect_error());
 }
 
-$id = $_POST['ID_cliente']
+$id = $_POST['ID_cliente'];
 $celular = $_POST['Celular_Cliente'];
 $endereco = $_POST['Endereco_Cliente'];
 $cep = $_POST['CEP_Cliente'];
@@ -20,7 +20,7 @@ $sql = "UPDATE Cliente SET Celular_Cliente='$cliente', Endereco_Cliente='$endere
 
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_affected_rows($conn) > 0) {
-    echo "As informações foram atualizadas!""
+if (mysqli_affected_rows($conn) > 0)
+    echo "As informações foram atualizadas!"
 
 ?>

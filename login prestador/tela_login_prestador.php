@@ -48,9 +48,9 @@
     <form id="form" class="form">
         <h1>Faça seu login</h1>
    <p id="email">Email: <input type="email" placeholder="Digite seu Email"
-    name="email_login" required> </p>   
+    name="Email_Prestador" required> </p>   
     <p id="senha">Senha: <input type="password" placeholder="Digite sua Senha"
-        name="senha_login" required> </p> 
+        name="Senha_Prestador" required> </p> 
     <input type="submit" class="login" value="Login">
         <div class="link">
             <p>Não possui uma conta? <a href="" class="link0">Cadastre-se aqui!</a></p> 

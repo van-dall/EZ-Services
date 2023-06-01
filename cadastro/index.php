@@ -94,8 +94,6 @@
         const campos = document.querySelectorAll('.required');
         const spans  = document.querySelectorAll('.span-required');
         const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-
-        function
         
         form.addEventListener('submit', (event) => {
             event.preventDefault();

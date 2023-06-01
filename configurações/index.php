@@ -14,33 +14,33 @@
         <ul class="nav nav-tabs">
           <p class="text-center">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../tela_inicio/projeto_1.html">Menu Inicial</a>
+            <a class="nav-link" aria-current="page" href="../tela_inicio/projeto_1.php">Menu Inicial</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Serviços</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../eletricista/trabalho_eletricista.html">Eletricista</a></li>
-              <li><a class="dropdown-item" href="../encanador/trabalho_encanador.html">Encanador</a></li>
-              <li><a class="dropdown-item" href="../encanador_de_gas/trabalho_encanador_de_gas.html">Encanador de Gás</a></li>
-              <li><a class="dropdown-item" href="../jardinagem/trabalho_jardineiro.html">Jardinagem</a></li>
+              <li><a class="dropdown-item" href="../eletricista/trabalho_eletricista.php">Eletricista</a></li>
+              <li><a class="dropdown-item" href="../encanador/trabalho_encanador.php">Encanador</a></li>
+              <li><a class="dropdown-item" href="../encanador_de_gas/trabalho_encanador_de_gas.php">Encanador de Gás</a></li>
+              <li><a class="dropdown-item" href="../jardinagem/trabalho_jardineiro.php">Jardinagem</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Cadastro</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../cadastro/index.html">Cadastro Cliente</a></li>
-              <li><a class="dropdown-item" href="../cadastro_prestador/indexP.html">Cadastro Profissional</a></li>
+              <li><a class="dropdown-item" href="../cadastro/index.php">Cadastro Cliente</a></li>
+              <li><a class="dropdown-item" href="../cadastro_prestador/indexP.php">Cadastro Profissional</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Login</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="..//login/indexLogin.html">Login Cliente</a></li>
-              <li><a class="dropdown-item" href="../login_prestador/indexLoginP.html">Login Profissional</a></li>
+              <li><a class="dropdown-item" href="..//login/indexLogin.php">Login Cliente</a></li>
+              <li><a class="dropdown-item" href="../login_prestador/indexLoginP.php">Login Profissional</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../configurações/index.html">Configuração</a>
+            <a class="nav-link" href="../configurações/index.php">Configuração</a>
           </li>
           </p>
         </ul>

@@ -100,9 +100,8 @@
     <?php
   $consulta = "SELECT * FROM Cliente WHERE Email_Cliente = '$email'";
   $resultado = mysqli_query($conn, $consulta);
-  echo $imagem;
 
-  while ($linha = mysqli_fetch_assoc($resultado)) {
+  while ($linha = $resultado->fetch_assoc()) {
     echo "<tr>";
     echo "<td>".$linha['ID_Cliente']."</td>";
     echo "<td>".$linha['Nome_Cliente']."</td>";
@@ -112,7 +111,19 @@
     echo "<td>".$linha['CEP_Cliente']."</td>";
     echo "<td>".$linha['Senha_Cliente']."</td>";
     echo "<td>".$linha['Endereco_Cliente']."</td>";
-    echo "<td>".$linha['imagem']."width='100'></td>"; 
+    echo "<td>";
+    if ($linha['imagem']) {?>
+      <td>
+          <img id="imagem" class="w3-circle w3-margin-top" src="data:image/png;base64,<?= base64_encode($linha['imagem']) ?>" />
+      </td><td>
+      <?php
+  } else {
+      ?>
+      <td>
+          <img id="imagem" class="w3-circle w3-margin-top" src="../imagem/pessoa_ezservice.png" />
+      </td><td>
+      <?php
+  }
     echo "</tr>";
   };
 

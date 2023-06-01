@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-    <script type="text/javascript" src="script.js"></script>   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">  
     <title>Cadastro</title>
 </head>
 <body>
@@ -42,7 +41,7 @@
           <li class="nav-item">
             <a class="nav-link" href="../configurações/index.php">Configuração</a>
           </li>
-          </p>
+        </p>
         </ul>
       </div>
     <div class="container">
@@ -60,6 +59,15 @@
             <p id="senhaP" name="Senha_Cliente">Senha: <input name="Senha_Cliente" type="password" placeholder="Senha" class="inputs required" oninput="mainPasswordValidate()"></p>
             <span class="span-required">Digite uma senha com no mínimo 8 caracteres</span>
         </div>
+        <div >
+            <p style="text-align:center"><label class="w3-text-IE"><b>Minha Imagem para Identificação: </b></label></p>
+            <p  style="text-align:center"><img class="container-img" id="imagemSelecionada" src="../imagem/pessoa_ezservice.jpg"   /></p>
+            <p style="text-align:center"><label class="w3-btn w3-theme">Selecione uma Imagem 
+                <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                <input type="file" id="imagem" name="imagem" accept="imagem/*" onchange="validaImagem(this);"></label>
+            </p>
+      </div>
+
         <div>
             <p id="senha_checkP" name="Senha_Cliente">Confirme sua senha: <input name="Senha_Cliente" type="password" placeholder="Repita a sua senha" class="inputs required" oninput="comparePassword()"></p>
             <span class="span-required">Senhas devem ser compatíveis</span>
@@ -86,8 +94,6 @@
         const campos = document.querySelectorAll('.required');
         const spans  = document.querySelectorAll('.span-required');
         const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-
-        function
         
         form.addEventListener('submit', (event) => {
             event.preventDefault();
@@ -206,6 +212,48 @@
 
       new bootstrap.Popover(document.getElementById('popoverButton'))
     </script>
+<script>
+function validaImagem(input) {
+  var caminho = input.value;
+
+  if (caminho) {
+      var comecoCaminho = (caminho.indexOf('\\') >= 0 ? caminho.lastIndexOf('\\') : caminho.lastIndexOf('/'));
+      var nomeArquivo = caminho.substring(comecoCaminho);
+
+      if (nomeArquivo.indexOf('\\') === 0 || nomeArquivo.indexOf('/') === 0) {
+          nomeArquivo = nomeArquivo.substring(1);
+      }
+
+      var extensaoArquivo = nomeArquivo.indexOf('.') < 1 ? '' : nomeArquivo.split('.').pop();
+
+      if (extensaoArquivo != 'gif' &&
+          extensaoArquivo != 'png' &&
+          extensaoArquivo != 'jpg' &&
+          extensaoArquivo != 'jpeg') {
+          input.value = '';
+          alert("É preciso selecionar um arquivo de imagem (gif, png, jpg ou jpeg)");
+      }
+  } else {
+      input.value = '';
+      alert("Selecione um caminho de arquivo válido");
+  }
+  if (input.files && input.files[0]) {
+      var arquivoTam = input.files[0].size / 960 / 960;
+      if (arquivoTam < 16) {
+          var reader = new FileReader();
+          reader.onload = function(e) {
+              document.getElementById('imagemSelecionada').setAttribute('src', e.target.result);
+          };
+          reader.readAsDataURL(input.files[0]);
+      } else {
+          input.value = '';
+          alert("O arquivo precisa ser uma imagem com menos de 16 MB");
+      }
+  } else{
+      document.getElementById('imagemSelecionada').setAttribute('src', '#');
+  }
+}
+</script>
 
     
 </body>

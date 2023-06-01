@@ -17,7 +17,7 @@ $endereco = $_POST['Endereco_Prestador'];
 $cep = $_POST['CEP_Prestador'];
 
 $sql = "UPDATE Prestador SET Celular_Prestador='$cliente', Endereco_Prestador='$endereco', CEP_Prestador='$cep'  WHERE id=$id";
-
+//atualiza tela
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_affected_rows($conn) > 0)

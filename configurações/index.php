@@ -10,6 +10,26 @@
     
 </head>
 <body>
+<?php
+global $servername ;
+global $username;
+global $password;
+global $database;
+
+$servername = "localhost:3306";
+$username = "root";
+$password = "";
+$database = "EZservice";
+
+session_start();
+$email = $_SESSION['Email_Cliente'];
+$imagem = $_SESSION['imagem'];
+echo $imagem;
+
+
+//$mensagemlogin = echo "Bem vindo '$email'"; /* Utilizar para fazer o design da maensagem de login*/
+?>
+
     <div class="p-3 mb-2 bg-warning text-dark">
         <ul class="nav nav-tabs">
           <p class="text-center">
@@ -28,7 +48,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Cadastro</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../cadastro/index.html">Cadastro Cliente</a></li>
+              <li><a class="  dropdown-item" href="../cadastro/index.html">Cadastro Cliente</a></li>
               <li><a class="dropdown-item" href="../cadastro_prestador/indexP.html">Cadastro Profissional</a></li>
             </ul>
           </li>
@@ -42,19 +62,22 @@
           <li class="nav-item">
             <a class="nav-link" href="../configurações/index.html">Configuração</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link"><?php echo "Bem vindo $email"?></a> <!-- Verificar , mudar para nome --> 
+          </li>
           </p>
         </ul>
       </div>
-
       <div class="container">
         <h1>Configurações</h1>
         <ul class="list-group">
-          <li class="list-group-item"><a href="#">Alterar senha</a></li>
           <li class="list-group-item">
-            <form method="POST" action="update.php">
-             <button id="editar-perfil-btn" onclick="exibirModalEditarPerfil()">Editar Perfil</button></li>
-          <li class="list-group-item"><a href="#">Privacidade</a></li>
-          <li class="list-group-item"><a href="#">Ajuda</a></li>
+            <form method="POST" action="tela_update.php">
+             <button id=() onclick="header('location:/EZ-Services/configuracoes/tela_update.php')">
+             Editar Perfil </button>
+          </li>
+    
+        
           <li class="list-group-item"><a href="#">Sair</a></li>
 
           <li class="list-group-item">
@@ -78,7 +101,7 @@
 
       new bootstrap.Popover(document.getElementById('popoverButton'))
     </script>
-      
+
       <div id="modal-editar-perfil" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -86,12 +109,12 @@
           <form id="form-editar-perfil" class="popupedit">
           <div>
             <form method="POST" action="update.php">
-            <p id="Ptelefone">Insira seu celular: <input type="text" id="telefone" name="telefone" class="inputs required" placeholder="(**)*****-****" pattern="[0-9]{2}[0-9]{9}" oninput="celValidate()"></p>
+            <p id="Ptelefone">Insira seu celular: <input type="text" name= "Celular_Cliente"id="telefone" name="telefone" class="inputs required" placeholder="()*-" pattern="[0-9]{2}[0-9]{9}" oninput="celValidate()"></p>
             <span class="span-required">Digite um número válido</span>
         </div>
         <div class="endereco">
-          <p id="nome">Endereço (Rua/Nº): </p><input type="text" placeholder="Digite seu endereço" class="inputs required"></p>
-          <p id="nome">Cep: </p><input type="text" placeholder="Digite seu Cep" class="inputs required" pattern="[0-9]{2}[0-9]{3}[0-9]{3}" oninput="cepValidate()"></p>
+          <p id="nome">Endereço (Rua/Nº): </p><input type="text" name="Endereco_Cliente" placeholder="Digite seu endereço" class="inputs required"></p>
+          <p id="nome">Cep: </p><input type="text" name="CEP_Cliente" placeholder="Digite seu Cep" class="inputs required" pattern="[0-9]{2}[0-9]{3}[0-9]{3}" oninput="cepValidate()"></p>
           <span class="span-required">Insira um CEP válido</span> 
           <input type="submit" class="salvar">
       </div>
@@ -105,7 +128,7 @@
   const form   = document.getElementById('form-editar-perfil');
         const campos = document.querySelectorAll('.required');
         const spans  = document.querySelectorAll('.span-required');
-        const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+        const emailRegex = /^\w+([-+.']\w+)@\w+([-.]\w+)\.\w+([-.]\w+)*$/;
     
         form.addEventListener('submit', (event) => {
             event.preventDefault();

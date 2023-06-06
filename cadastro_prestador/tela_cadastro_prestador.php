@@ -32,7 +32,7 @@ VALUES ('$nome', '$email', '$cpf', '$celular', '$cep', '$md5senha', '$endereco')
 
 
 if(isset($_POST['Email_Prestador'])){
-  $sql2 = mysqli_query($conn, "SELECT* FROM Prestador WHERE Email_Cliente = '{$email}'") or print mysql_error();
+  $sql2 = mysqli_query($conn, "SELECT* FROM Prestador WHERE Email_Cliente = '{$email}'") or print mysqli_error();
 
   if(mysqli_num_rows($sql2)>0) {
     echo json_encode(array('Email_Prestador' => 'Ja existe um usuario cadastrado com esse email'));
@@ -40,7 +40,7 @@ if(isset($_POST['Email_Prestador'])){
     if (mysqli_query($conn, $sql)) {
       $msg = "Registro feito com sucesso!";
       $_SESSION['mensagem'] = $msg;
-      header('location: /EZ-Services/login prestador/login_prestador.php');
+      header('location: /EZ-Services/login_prestador/login_prestador.php');
       exit();
     } else {
       echo "Erro ao inserir registro: " . mysqli_error($conn);

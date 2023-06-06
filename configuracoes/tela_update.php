@@ -24,6 +24,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <style>
+    .container-img{
+      border-radius: 50%;
+      max-width: 50px;
+      max-height: 50px
+    }
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -111,18 +118,18 @@
     echo "<td>".$linha['CEP_Cliente']."</td>";
     echo "<td>".$linha['Senha_Cliente']."</td>";
     echo "<td>".$linha['Endereco_Cliente']."</td>";
-    echo "<td>";
     if ($linha['imagem']) {?>
       <td>
-          <img id="imagem" class="w3-circle w3-margin-top" src="data:image/png;base64,<?= base64_encode($linha['imagem']) ?>" />
-      </td><td>
+          <img id="imagem" class="container-img" src="../imagem/O_boto.png"/>
+      </td>
       <?php
   } else {
       ?>
       <td>
-          <img id="imagem" class="w3-circle w3-margin-top" src="../imagem/pessoa_ezservice.png" />
-      </td><td>
+          <img id="imagem" class="container-img" src="../imagem/pessoa_ezservice.png" />
+  </td> 
       <?php
+  
   }
     echo "</tr>";
   };
@@ -135,3 +142,4 @@
 </table>
 </body>
 </html>
+

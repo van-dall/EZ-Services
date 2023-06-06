@@ -5,22 +5,10 @@ $username = "root";
 $password = "";
 $database = "EZservice";
 
-$conn = mysqli_connect($host, $user, $password, $database);
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+session_start(); 
 
 if (!$conn) {
     die("Conexão falhou: " . mysqli_connect_error());
 }
-
-$id = $_POST['ID_Prestador'];
-$celular = $_POST['Celular_Prestador'];
-$endereco = $_POST['Endereco_Prestador'];
-$cep = $_POST['CEP_Prestador'];
-
-$sql = "UPDATE Prestador SET Celular_Prestador='$cliente', Endereco_Prestador='$endereco', CEP_Prestador='$cep'  WHERE id=$id";
-//atualiza tela
-$result = mysqli_query($conn, $sql);
-
-if (mysqli_affected_rows($conn) > 0)
-    echo "As informações foram atualizadas!"
-
-?>
